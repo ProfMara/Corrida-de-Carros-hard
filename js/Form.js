@@ -1,0 +1,46 @@
+class Form {
+  constructor() {
+    this.input = createInput("").attribute("placeholder", "Digite seu nome");
+    this.playButton = createButton("Jogar");
+    this.titleImg = createImg("./assets/TITULO.png", "nome do jogo");
+    this.greeting = createElement("h2");
+  }
+
+  esconder() {
+    this.input.hide();
+    this.playButton.hide();
+    this.greeting.hide();
+    
+  }
+
+  mouseClicou(){
+    this.playButton.mousePressed(()=>{
+    this.input.hide();
+    this.playButton.hide();
+   
+    })
+    
+  }
+
+  definirPosicao(){
+    this.titleImg.position(120,160);
+    this.input.position(width/2 - 110, height /2 - 80);
+    this.playButton.position(width/2 - 90, height /2 - 20);
+    this.greeting.position(width/2 - 300, height - 160);
+  }
+
+  definirEstilo(){
+    this.titleImg.class("gameTitle");
+    this.input.class("customInput");
+    this.playButton.class("customButton");
+    this.greeting.class("greeting");
+  }
+
+
+  exibir(){
+    this.mouseClicou();
+    this.definirEstilo();
+    this.definirPosicao();
+
+  }
+}
